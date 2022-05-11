@@ -1,9 +1,9 @@
-package io.github.evandrolopes85.rueirosdobem.service;
+package io.github.evandrolopes85.doacoes.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.evandrolopes85.rueirosdobem.model.Evento;
+import io.github.evandrolopes85.doacoes.model.Evento;
 
 public interface IEventoService {
 	public ArrayList<Evento> recuperarTodosEventos();

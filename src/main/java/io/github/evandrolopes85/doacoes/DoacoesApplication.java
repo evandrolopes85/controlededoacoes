@@ -1,13 +1,13 @@
-package io.github.evandrolopes85.rueirosdobem;
+package io.github.evandrolopes85.doacoes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RueirosdobemApplication {
+public class DoacoesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RueirosdobemApplication.class, args);
+		SpringApplication.run(DoacoesApplication.class, args);
 	}
 
 }

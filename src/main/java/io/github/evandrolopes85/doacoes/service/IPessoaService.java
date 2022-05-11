@@ -1,8 +1,8 @@
-package io.github.evandrolopes85.rueirosdobem.service;
+package io.github.evandrolopes85.doacoes.service;
 
 import java.util.ArrayList;
 
-import io.github.evandrolopes85.rueirosdobem.model.Pessoa;
+import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 public interface IPessoaService {
 

@@ -1,4 +1,4 @@
-package io.github.evandrolopes85.rueirosdobem.service;
+package io.github.evandrolopes85.doacoes.service;
 
 import java.util.ArrayList;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DaoSupport;
 import org.springframework.stereotype.Component;
 
-import io.github.evandrolopes85.rueirosdobem.dao.PessoaDAO;
-import io.github.evandrolopes85.rueirosdobem.model.Pessoa;
+import io.github.evandrolopes85.doacoes.dao.PessoaDAO;
+import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 @Component
 public class PessoaServiceImpl implements IPessoaService{

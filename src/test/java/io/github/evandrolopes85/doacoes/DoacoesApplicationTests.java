@@ -1,10 +1,10 @@
-package io.github.evandrolopes85.rueirosdobem;
+package io.github.evandrolopes85.doacoes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RueirosdobemApplicationTests {
+class DoacoesApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package io.github.evandrolopes85.rueirosdobem.model;
+package io.github.evandrolopes85.doacoes.model;
 
 import java.time.LocalDate;
 

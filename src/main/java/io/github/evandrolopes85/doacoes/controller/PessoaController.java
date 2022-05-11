@@ -1,4 +1,4 @@
-package io.github.evandrolopes85.rueirosdobem.controller;
+package io.github.evandrolopes85.doacoes.controller;
 
 import java.util.ArrayList;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.evandrolopes85.rueirosdobem.model.Pessoa;
-import io.github.evandrolopes85.rueirosdobem.service.IPessoaService;
+import io.github.evandrolopes85.doacoes.model.Pessoa;
+import io.github.evandrolopes85.doacoes.service.IPessoaService;
 
 @RestController
 public class PessoaController {

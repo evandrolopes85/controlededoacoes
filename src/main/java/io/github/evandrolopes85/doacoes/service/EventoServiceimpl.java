@@ -1,12 +1,12 @@
-package io.github.evandrolopes85.rueirosdobem.service;
+package io.github.evandrolopes85.doacoes.service;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import io.github.evandrolopes85.rueirosdobem.dao.EventoDAO;
-import io.github.evandrolopes85.rueirosdobem.model.Evento;
+import io.github.evandrolopes85.doacoes.dao.EventoDAO;
+import io.github.evandrolopes85.doacoes.model.Evento;
 
 @Component
 public class EventoServiceimpl implements IEventoService{

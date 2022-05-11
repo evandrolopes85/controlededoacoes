@@ -1,4 +1,4 @@
-package io.github.evandrolopes85.rueirosdobem.controller;
+package io.github.evandrolopes85.doacoes.controller;
 
 import java.util.ArrayList;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.evandrolopes85.rueirosdobem.model.Evento;
-import io.github.evandrolopes85.rueirosdobem.service.IEventoService;
+import io.github.evandrolopes85.doacoes.model.Evento;
+import io.github.evandrolopes85.doacoes.service.IEventoService;
 
 @RestController
 @CrossOrigin("*")
