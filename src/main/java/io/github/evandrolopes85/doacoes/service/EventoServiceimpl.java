@@ -25,7 +25,7 @@ public class EventoServiceimpl implements IEventoService{
 	}
 
 	@Override
-	public Evento recuperaEventoPorID(int id) {
+	public Evento recuperaEventoPorID(Integer id) {
 		// TODO Auto-generated method stub
 		Evento evento = (Evento)dao.findByIdEvento(id);
 		
@@ -47,8 +47,22 @@ public class EventoServiceimpl implements IEventoService{
 	}
 
 	@Override
-	public Evento atualizarPessoa(Evento p) {
-		// TODO Auto-generated method stub
+	public Evento atualizarEvento(Evento evento) {
+		if(evento != null) {
+			Evento e = recuperaEventoPorID(evento.getIdEvento());
+			e.setIdEvento(evento.getIdEvento());
+			e.setNome(evento.getNome());
+			e.setDataInicio(evento.getDataInicio());
+			e.setDataFim(evento.getDataFim());
+			e.setDataCriacao(e.getDataCriacao());
+			e.setUrlFoto(evento.getUrlFoto());
+			e.setAtivo(evento.isAtivo());
+			e.setDescricao(evento.getDescricao());
+			e.setPessoa(evento.getPessoa());
+			dao.save(e);
+			
+			return e;
+		}
 		return null;
 	}
 

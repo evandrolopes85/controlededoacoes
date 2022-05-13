@@ -7,9 +7,9 @@ import io.github.evandrolopes85.doacoes.model.Evento;
 
 public interface IEventoService {
 	public ArrayList<Evento> recuperarTodosEventos();
-	public Evento recuperaEventoPorID(int id);
+	public Evento recuperaEventoPorID(Integer id);
 	public Evento adicionarEvento(Evento evento);
-	public Evento atualizarPessoa(Evento evento);
+	public Evento atualizarEvento(Evento evento);
 	
 //	public ArrayList<Evento> recuperarEventosPorIdDaPessoa(int idPessoa);
 }
