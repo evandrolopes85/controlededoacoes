@@ -22,6 +22,7 @@ public class PessoaController {
 
 	@GetMapping("/pessoa")
 	public ResponseEntity<ArrayList<Pessoa>> recuperarTodasPessoas() {
+		
 		return ResponseEntity.ok(service.recuperarTodasPessoas());
 	}
 

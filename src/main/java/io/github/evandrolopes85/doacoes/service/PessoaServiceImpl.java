@@ -26,8 +26,11 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public Pessoa recuperaPorID(int id) {
+	public Pessoa recuperaPorID(Integer id) {
 		// TODO Auto-generated method stub
+		if(id == null)
+			return null;
+		
 		Pessoa p = dao.findByIdPessoa(id);
 		if(p != null)
 			return p;
