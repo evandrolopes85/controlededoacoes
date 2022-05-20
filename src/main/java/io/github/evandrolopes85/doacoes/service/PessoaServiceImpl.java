@@ -3,13 +3,13 @@ package io.github.evandrolopes85.doacoes.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.support.DaoSupport;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import io.github.evandrolopes85.doacoes.dao.PessoaDAO;
+import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 
-@Component
+@Service
 public class PessoaServiceImpl implements IPessoaService{
 
 	@Autowired
@@ -26,12 +26,12 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public Pessoa recuperaPorID(Integer id) {
+	public PessoaDTO recuperaPorID(Integer id) {
 		// TODO Auto-generated method stub
 		if(id == null)
 			return null;
 		
-		Pessoa p = dao.findByIdPessoa(id);
+		PessoaDTO p = dao.recuperarPessoaPorId(id);//dao.findByIdPessoa(id);
 		if(p != null)
 			return p;
 		
@@ -80,15 +80,15 @@ public class PessoaServiceImpl implements IPessoaService{
 		return null;
 	}
 
-	@Override
-	public Pessoa login(Pessoa pessoa) {
-		// TODO Auto-generated method stub
-		Pessoa login = dao.findByEmailAndSenha(pessoa.getEmail(), pessoa.getSenha());
-		
-		if(login != null) {
-			return login;
-		}
-		
-		return null;
-	}
+//	@Override
+//	public Pessoa login(Pessoa pessoa) {
+//		// TODO Auto-generated method stub
+//		Pessoa login = dao.findByEmailAndSenha(pessoa.getEmail(), pessoa.getSenha());
+//		
+//		if(login != null) {
+//			return login;
+//		}
+//		
+//		return null;
+//	}
 }

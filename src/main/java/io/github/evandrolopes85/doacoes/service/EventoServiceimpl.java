@@ -3,12 +3,13 @@ package io.github.evandrolopes85.doacoes.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import io.github.evandrolopes85.doacoes.dao.EventoDAO;
+import io.github.evandrolopes85.doacoes.dto.EventoDTO;
 import io.github.evandrolopes85.doacoes.model.Evento;
 
-@Component
+@Service
 public class EventoServiceimpl implements IEventoService{
 	
 	@Autowired
@@ -65,6 +66,16 @@ public class EventoServiceimpl implements IEventoService{
 		}
 		return null;
 	}
+
+//	@Override
+//	public EventoDTO recuperaEventoEPessoaPorId(Integer id) {
+//		// TODO Auto-generated method stub
+//		EventoDTO evento = dao.recuperaEventoEPessoaPorId(id);
+//		if(evento != null)
+//			return evento;
+//		
+//		return null;
+//	}
 
 //	@Override
 //	public ArrayList<Evento> recuperarEventosPorIdDaPessoa(int idPessoa) {

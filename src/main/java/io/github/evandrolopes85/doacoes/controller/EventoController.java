@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.evandrolopes85.doacoes.dto.EventoDTO;
 import io.github.evandrolopes85.doacoes.model.Evento;
 import io.github.evandrolopes85.doacoes.service.IEventoService;
 

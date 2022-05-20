@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 import io.github.evandrolopes85.doacoes.service.IPessoaService;
 
@@ -27,26 +28,26 @@ public class PessoaController {
 	}
 
 	@GetMapping("/pessoa/{id}")
-	public ResponseEntity<Pessoa> recuperaPessoaPorId(@PathVariable int id) {
-		Pessoa p = service.recuperaPorID(id);
+	public ResponseEntity<PessoaDTO> recuperaPessoaPorId(@PathVariable int id) {
+		PessoaDTO p = service.recuperaPorID(id);
 		if (p != null) {
 			return ResponseEntity.ok(p);
 		}
 		return ResponseEntity.notFound().build();
 	}
 
-	@GetMapping("/login")
-	public ResponseEntity<Pessoa> login(@RequestBody Pessoa pessoa) {
-		if (pessoa != null) {
-			Pessoa login = service.login(pessoa);
-			if (login != null) {
-				return ResponseEntity.ok(login);
-			}
-			return ResponseEntity.status(401).build();
-
-		}
-		return ResponseEntity.badRequest().build();
-	}
+//	@GetMapping("/login")
+//	public ResponseEntity<Pessoa> login(@RequestBody Pessoa pessoa) {
+//		if (pessoa != null) {
+//			Pessoa login = service.login(pessoa);
+//			if (login != null) {
+//				return ResponseEntity.ok(login);
+//			}
+//			return ResponseEntity.status(401).build();
+//
+//		}
+//		return ResponseEntity.badRequest().build();
+//	}
 
 	@PostMapping("/pessoa")
 	public ResponseEntity<Pessoa> adicionarPessoa(@RequestBody Pessoa pessoa) {
