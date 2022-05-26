@@ -28,8 +28,8 @@ public class PessoaController {
 	}
 
 	@GetMapping("/pessoa/{id}")
-	public ResponseEntity<PessoaDTO> recuperaPessoaPorId(@PathVariable int id) {
-		PessoaDTO p = service.recuperaPorID(id);
+	public ResponseEntity<Pessoa> recuperaPessoaPorId(@PathVariable int id) {
+		Pessoa p = service.recuperaPorID(id);
 		if (p != null) {
 			return ResponseEntity.ok(p);
 		}

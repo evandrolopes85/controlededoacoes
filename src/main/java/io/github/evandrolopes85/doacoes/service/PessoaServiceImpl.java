@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.github.evandrolopes85.doacoes.dao.PessoaDAO;
-import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 @Service
@@ -26,12 +25,12 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public PessoaDTO recuperaPorID(Integer id) {
+	public Pessoa recuperaPorID(Integer id) {
 		// TODO Auto-generated method stub
 		if(id == null)
 			return null;
 		
-		PessoaDTO p = dao.recuperarPessoaPorId(id);//dao.findByIdPessoa(id);
+		Pessoa p = dao.findByIdPessoa(id);
 		if(p != null)
 			return p;
 		

@@ -1,7 +1,9 @@
 package io.github.evandrolopes85.doacoes.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -46,6 +49,10 @@ public class Evento {
 	@JoinColumn(name = "id_nome")
 	@JsonIgnoreProperties("eventos")
 	private Pessoa pessoa;
+	
+	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("evento")
+	private List<ItensDoEvento> itensDoEvento;
 
 	public Integer getIdEvento() {
 		return idEvento;
@@ -118,4 +125,14 @@ public class Evento {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
+
+	public List<ItensDoEvento> getItensDoEvento() {
+		return itensDoEvento;
+	}
+
+	public void setItensDoEvento(List<ItensDoEvento> itensDoEvento) {
+		this.itensDoEvento = itensDoEvento;
+	}
+	
+	
 }
