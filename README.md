@@ -50,7 +50,22 @@ Defina o método HTTP POST -> Body -> raw -> JSON:
  }
  ```
  
- Para atualizar os dados de uma pessoa utilize o método HTTP PUT e siga os mesmos passos para adicionar. Podem adiciona o atributo idPessoa e passe o id da pessoa que deseja atualizar:
- ```
-  "idPessoa": id,
+ Para atualizar os dados de uma pessoa utilize o método HTTP PUT e siga os mesmos passos para adicionar. Porem adiciona o atributo idPessoa e passe o id da pessoa que deseja atualizar:
+
+```Json
+ {
+        "id pessoa": 1,
+        "nome": "Pedro",
+        "email": "pedro@gmail.com",
+        "telefone": "1112345678",
+        "senha": "12345",
+        "administrador": true,
+        "cep": "08000000",
+        "logradouro": "rua de casa",
+        "numero": "0",
+        "complemento": "",
+        "bairro": "",
+        "cidade": "sao paulo",
+        "uf": "sp"
+ }
  ```
