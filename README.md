@@ -1,4 +1,4 @@
-# Controle de oacoes
+# Controle de doacoes
 
 ## Projeto para estudar Spring-Boot, modelagem de dados, MySQL, API REST.
 
@@ -50,7 +50,7 @@ Defina o método HTTP POST -> Body -> raw -> JSON:
  }
  ```
  
- Para atualizar os dados de uma pessoa utilize o método HTTP PUT e siga os mesmos passos para adicionar. Poderem adiciona o atributo idPessoa e passe o id da pessoa que deseja atualizar:
+ Para atualizar os dados de uma pessoa utilize o método HTTP PUT e siga os mesmos passos para adicionar. Podem adiciona o atributo idPessoa e passe o id da pessoa que deseja atualizar:
  ```
   "idPessoa": id,
  ```
