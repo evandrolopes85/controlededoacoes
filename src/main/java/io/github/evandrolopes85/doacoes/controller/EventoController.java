@@ -24,8 +24,8 @@ public class EventoController {
 	private IEventoService service;
 
 	@GetMapping("/evento")
-	public ResponseEntity<ArrayList<Evento>> recuperarTodosEventos(){
-		ArrayList<Evento> eventos = service.recuperarTodosEventos();
+	public ResponseEntity<ArrayList<EventoDTO>> recuperarTodosEventos(){
+		ArrayList<EventoDTO> eventos = service.recuperarTodosEventos();
 		if(eventos != null)
 			return ResponseEntity.status(200).body(eventos);
 		

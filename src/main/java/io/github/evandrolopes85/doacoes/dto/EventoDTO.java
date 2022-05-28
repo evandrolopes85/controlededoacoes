@@ -14,10 +14,10 @@ public class EventoDTO {
 	private String urlFoto;
 	private boolean ativo;
 	private String descricao;
-	private List<ItensDoEvento> itens;
+	private Integer itens;
 	
 	public EventoDTO(Integer id, String nome, LocalDate dataInicio, LocalDate dataFim, LocalDate dataCriacao,
-			String urlFoto, boolean ativo, String descricao, List<ItensDoEvento> itens) {
+			String urlFoto, boolean ativo, String descricao, Integer itens) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -78,10 +78,10 @@ public class EventoDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public List<ItensDoEvento> getItens() {
+	public Integer getItens() {
 		return itens;
 	}
-	public void setItens(List<ItensDoEvento> itens) {
+	public void setItens(Integer itens) {
 		this.itens = itens;
 	}
 }

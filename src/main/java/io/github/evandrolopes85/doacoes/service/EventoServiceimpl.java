@@ -16,9 +16,9 @@ public class EventoServiceimpl implements IEventoService{
 	private EventoDAO dao;
 
 	@Override
-	public ArrayList<Evento> recuperarTodosEventos() {
+	public ArrayList<EventoDTO> recuperarTodosEventos() {
 		// TODO Auto-generated method stub
-		ArrayList<Evento> lista = (ArrayList<Evento>)dao.findAll();
+		ArrayList<EventoDTO> lista = (ArrayList<EventoDTO>)dao.recuperaEventosEItens();
 		if(lista != null)
 			return lista;
 		
