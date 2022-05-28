@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "tbl_evento_item")
 public class ItensDoEvento {
@@ -28,6 +30,7 @@ public class ItensDoEvento {
 	private Integer qtdObtida;
 	
 	@ManyToOne()
+	@JsonIgnoreProperties("itensDoEvento")
 	@JoinColumn(name = "id_evento")
 	private Evento evento;
 

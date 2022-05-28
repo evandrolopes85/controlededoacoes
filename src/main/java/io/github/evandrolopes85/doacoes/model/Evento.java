@@ -47,10 +47,10 @@ public class Evento {
 
 	@ManyToOne
 	@JoinColumn(name = "id_nome")
-	@JsonIgnoreProperties("eventos")
+	//@JsonIgnoreProperties("eventos")
 	private Pessoa pessoa;
 	
-	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "evento")
 	@JsonIgnoreProperties("evento")
 	private List<ItensDoEvento> itensDoEvento;
 

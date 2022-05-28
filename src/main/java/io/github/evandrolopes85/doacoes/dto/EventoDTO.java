@@ -1,19 +1,33 @@
 package io.github.evandrolopes85.doacoes.dto;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import io.github.evandrolopes85.doacoes.model.ItensDoEvento;
+
 public class EventoDTO {
 	private Integer id;
 	private String nome;
-	private Integer idPessoa;
-	private String nomePessoa;
-	private String emailPessoa;
+	private LocalDate dataInicio;
+	private LocalDate dataFim;
+	private LocalDate dataCriacao;
+	private String urlFoto;
+	private boolean ativo;
+	private String descricao;
+	private List<ItensDoEvento> itens;
 	
-	public EventoDTO(Integer id, String nome, Integer idPessoa, String nomePessoa, String emailPessoa) {
+	public EventoDTO(Integer id, String nome, LocalDate dataInicio, LocalDate dataFim, LocalDate dataCriacao,
+			String urlFoto, boolean ativo, String descricao, List<ItensDoEvento> itens) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.idPessoa = idPessoa;
-		this.nomePessoa = nomePessoa;
-		this.emailPessoa = emailPessoa;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.dataCriacao = dataCriacao;
+		this.urlFoto = urlFoto;
+		this.ativo = ativo;
+		this.descricao = descricao;
+		this.itens = itens;
 	}
 	
 	public Integer getId() {
@@ -28,24 +42,46 @@ public class EventoDTO {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getIdPessoa() {
-		return idPessoa;
+	public LocalDate getDataInicio() {
+		return dataInicio;
 	}
-	public void setIdPessoa(Integer idPessoa) {
-		this.idPessoa = idPessoa;
+	public void setDataInicio(LocalDate dataInicio) {
+		this.dataInicio = dataInicio;
 	}
-	public String getNomePessoa() {
-		return nomePessoa;
+	public LocalDate getDataFim() {
+		return dataFim;
 	}
-	public void setNomePessoa(String nomePessoa) {
-		this.nomePessoa = nomePessoa;
+	public void setDataFim(LocalDate dataFim) {
+		this.dataFim = dataFim;
 	}
-	public String getEmailPessoa() {
-		return emailPessoa;
+	public LocalDate getDataCriacao() {
+		return dataCriacao;
 	}
-	public void setEmailPessoa(String emailPessoa) {
-		this.emailPessoa = emailPessoa;
+	public void setDataCriacao(LocalDate dataCriacao) {
+		this.dataCriacao = dataCriacao;
 	}
-	
-	
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
+	}
+	public boolean isAtivo() {
+		return ativo;
+	}
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public List<ItensDoEvento> getItens() {
+		return itens;
+	}
+	public void setItens(List<ItensDoEvento> itens) {
+		this.itens = itens;
+	}
 }
