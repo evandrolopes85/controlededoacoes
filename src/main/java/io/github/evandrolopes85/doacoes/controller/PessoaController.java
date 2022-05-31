@@ -35,22 +35,34 @@ public class PessoaController {
 		}
 		return ResponseEntity.notFound().build();
 	}
+	
+	@GetMapping("/pessoa/{email}")
+	public ResponseEntity<Pessoa> recuperarPessoaPorEmail(@PathVariable String email){
+		if(email.isBlank()) {
+			return null;
+		}
+		Pessoa p = service.recuperarPessoaPorEmail(email);
+		if(p != null)
+			return ResponseEntity.ok(p);
+		
+		return ResponseEntity.notFound().build();
+	}
 
-//	@GetMapping("/login")
-//	public ResponseEntity<Pessoa> login(@RequestBody Pessoa pessoa) {
-//		if (pessoa != null) {
-//			Pessoa login = service.login(pessoa);
-//			if (login != null) {
-//				return ResponseEntity.ok(login);
-//			}
-//			return ResponseEntity.status(401).build();
-//
-//		}
-//		return ResponseEntity.badRequest().build();
-//	}
+	@GetMapping("/login")
+	public ResponseEntity<PessoaDTO> login(@RequestBody Pessoa pessoa) {
+		if (pessoa != null) {
+			PessoaDTO login = service.login(pessoa);
+			if (login != null) {
+				return ResponseEntity.ok(login);
+			}
+			return ResponseEntity.status(401).build();
+
+		}
+		return ResponseEntity.badRequest().build();
+	}
 
 	@PostMapping("/pessoa")
-	public ResponseEntity<Pessoa> adicionarPessoa(@RequestBody Pessoa pessoa) {
+	public ResponseEntity<Pessoa> adicionarPessoa(@RequestBody Pessoa pessoa){
 		if (pessoa != null) {
 			Pessoa novaPessoa = service.adicionarPessoa(pessoa);
 			return ResponseEntity.status(201).body(novaPessoa);

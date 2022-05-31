@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.github.evandrolopes85.doacoes.dao.PessoaDAO;
+import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 @Service
@@ -79,15 +80,28 @@ public class PessoaServiceImpl implements IPessoaService{
 		return null;
 	}
 
-//	@Override
-//	public Pessoa login(Pessoa pessoa) {
-//		// TODO Auto-generated method stub
-//		Pessoa login = dao.findByEmailAndSenha(pessoa.getEmail(), pessoa.getSenha());
-//		
-//		if(login != null) {
-//			return login;
-//		}
-//		
-//		return null;
-//	}
+	@Override
+	public PessoaDTO login(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		PessoaDTO login = dao.login(pessoa.getEmail(), pessoa.getSenha());
+		
+		if(login != null) {
+			return login;
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Pessoa recuperarPessoaPorEmail(String email) {
+		if(!email.isBlank()) {
+			Pessoa p = dao.findByEmail(email);
+			if(p != null) {
+				return p;
+			}
+			return null;
+		}
+			
+		return null;
+	}
 }
