@@ -69,3 +69,31 @@ Defina o método HTTP POST -> Body -> raw -> JSON:
         "uf": "sp"
  }
  ```
+ 
+ ### Recuperar Pessoa por email
+ Método HTTP GET no end-point:
+ 
+ ```
+ localhost:8080/pessoa/email
+ ```
+ Enviando um JSON com email
+ 
+ ```Json
+    "email": "evandrocwd@gmail.com"
+ ```
+ 
+ ### Login
+ Método HTTP GET no end-point:
+ 
+ ```
+ localhost:8080/login
+ ```
+ 
+ Enviando um JSON com o email e senha do usuario
+ 
+ ```Json
+ {
+    "email": "evandrocwd@gmail.com",
+    "senha": "1234"
+}
+```
