@@ -36,12 +36,9 @@ public class PessoaController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@GetMapping("/pessoa/{email}")
-	public ResponseEntity<Pessoa> recuperarPessoaPorEmail(@PathVariable String email){
-		if(email.isBlank()) {
-			return null;
-		}
-		Pessoa p = service.recuperarPessoaPorEmail(email);
+	@GetMapping("/pessoa/email")
+	public ResponseEntity<Pessoa> recuperarPessoaPorEmail(@RequestBody Pessoa pessoa){
+		Pessoa p = service.recuperarPessoaPorEmail(pessoa.getEmail());
 		if(p != null)
 			return ResponseEntity.ok(p);
 		
