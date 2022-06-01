@@ -30,11 +30,28 @@ public class ItensDoEventoController {
 	
 	@PostMapping("/itens")
 	public ResponseEntity<ItensDoEvento> adicionaItensDoEvento(@RequestBody ItensDoEvento itensDoEvento){
-		return null;
+		if(itensDoEvento != null) {
+			ItensDoEvento itens = service.adicionaItensDoEvento(itensDoEvento);
+			return ResponseEntity.status(201).body(itens);
+		}
+		return ResponseEntity.notFound().build();
 	}
 	
 	@PutMapping("/itens")
 	public ResponseEntity<ItensDoEvento> atualizarItensDoEvento(@RequestBody ItensDoEvento itensDoEvento){
-		return null;
+		ItensDoEvento updateItens;
+		
+		if(itensDoEvento != null && itensDoEvento.getIdItensDoEvento() != null) {
+			updateItens = service.recuperaEventoPorId(itensDoEvento.getIdItensDoEvento());
+			
+			updateItens.setProduto(itensDoEvento.getProduto());
+			updateItens.setQtdNecessaria(itensDoEvento.getQtdNecessaria());
+			updateItens.setQtdObtida(itensDoEvento.getQtdObtida());
+//			updateItens.setEvento(itensDoEvento.getEvento());
+			
+			return ResponseEntity.ok(service.atualizarItensDoEvento(updateItens) );
+		}
+		
+		return ResponseEntity.badRequest().build();
 	}
 }

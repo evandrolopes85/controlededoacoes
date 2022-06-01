@@ -26,12 +26,12 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public PessoaDTO recuperaPorID(Integer id) {
+	public Pessoa recuperaPorID(Integer id) {
 		// TODO Auto-generated method stub
 		if(id == null)
 			return null;
 		
-		PessoaDTO p = dao.recuperarPessoaPorId(id);//dao.findByIdPessoa(id);
+		Pessoa p = dao.findByIdPessoa(id);
 		if(p != null)
 			return p;
 		
@@ -80,15 +80,28 @@ public class PessoaServiceImpl implements IPessoaService{
 		return null;
 	}
 
-//	@Override
-//	public Pessoa login(Pessoa pessoa) {
-//		// TODO Auto-generated method stub
-//		Pessoa login = dao.findByEmailAndSenha(pessoa.getEmail(), pessoa.getSenha());
-//		
-//		if(login != null) {
-//			return login;
-//		}
-//		
-//		return null;
-//	}
+	@Override
+	public PessoaDTO login(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		PessoaDTO login = dao.login(pessoa.getEmail(), pessoa.getSenha());
+		
+		if(login != null) {
+			return login;
+		}
+		
+		return null;
+	}
+
+	@Override
+	public Pessoa recuperarPessoaPorEmail(String email) {
+		if(!email.isBlank()) {
+			Pessoa p = dao.findByEmail(email);
+			if(p != null) {
+				return p;
+			}
+			return null;
+		}
+			
+		return null;
+	}
 }

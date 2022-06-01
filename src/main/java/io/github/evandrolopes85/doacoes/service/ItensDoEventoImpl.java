@@ -22,13 +22,28 @@ public class ItensDoEventoImpl implements IItensDoEventoService{
 
 	@Override
 	public ItensDoEvento adicionaItensDoEvento(ItensDoEvento itensDoEvento) {
-		// TODO Auto-generated method stub
+		
+		ItensDoEvento novosItens = itensDoEvento;
+		if(novosItens != null) {
+			return dao.save(novosItens);
+		}
 		return null;
 	}
 
 	@Override
 	public ItensDoEvento atualizarItensDoEvento(ItensDoEvento itensDoEvento) {
+		if(itensDoEvento != null) {
+			return dao.save(itensDoEvento);
+		}
+		return null;
+	}
+
+	@Override
+	public ItensDoEvento recuperaEventoPorId(Integer id) {
 		// TODO Auto-generated method stub
+		if(id != null) {
+			return dao.findByIdItensDoEvento(id);
+		}
 		return null;
 	}
 }

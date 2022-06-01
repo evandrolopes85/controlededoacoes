@@ -1,11 +1,16 @@
 package io.github.evandrolopes85.doacoes.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tbl_pessoa")
@@ -52,9 +57,9 @@ public class Pessoa {
 	@Column(name = "uf", length = 2, nullable = false)
 	private String uf;
 
-//	@OneToMany(mappedBy = "pessoa")
-//	@JsonIgnoreProperties("pessoa")
-//	private List<Evento> eventos;
+	@OneToMany(mappedBy = "pessoa")
+	@JsonIgnoreProperties("pessoa")
+	private List<Evento> eventos;
 
 	public Integer getIdPessoa() {
 		return idPessoa;
@@ -164,11 +169,11 @@ public class Pessoa {
 		this.uf = uf;
 	}
 
-//	public List<Evento> getEventos() {
-//		return eventos;
-//	}
-//
-//	public void setEventos(List<Evento> eventos) {
-//		this.eventos = eventos;
-//	}
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}
 }

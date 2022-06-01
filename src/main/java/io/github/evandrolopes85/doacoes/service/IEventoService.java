@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
+import io.github.evandrolopes85.doacoes.dto.EventoDTO;
 import io.github.evandrolopes85.doacoes.model.Evento;
 
 @Service

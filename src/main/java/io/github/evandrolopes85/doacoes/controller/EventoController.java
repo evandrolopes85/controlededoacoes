@@ -62,9 +62,4 @@ public class EventoController {
 		}
 		return ResponseEntity.badRequest().build();
 	}
-	
-//	@GetMapping("/evento/{idPessoa}")
-//	public ResponseEntity<ArrayList<Evento>> recuperarEventoPorIdDaPessoa(@PathVariable int idPessoa){
-//		return ResponseEntity.ok(service.recuperarEventosPorIdDaPessoa(idPessoa));
-//	}
 }
