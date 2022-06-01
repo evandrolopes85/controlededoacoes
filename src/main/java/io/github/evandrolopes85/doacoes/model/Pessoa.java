@@ -9,12 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -44,6 +44,9 @@ public class Pessoa {
 	@Column(name = "telefone", length = 16, nullable = false)
 	private String telefone;
 
+	@NotNull
+	@NotEmpty
+	@Length(min = 4, max = 16)
 	@Column(name = "senha", length = 16, nullable = false)
 	private String senha;
 

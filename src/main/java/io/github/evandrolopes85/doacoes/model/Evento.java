@@ -47,7 +47,7 @@ public class Evento {
 
 	@ManyToOne
 	@JoinColumn(name = "id_nome")
-	//@JsonIgnoreProperties("eventos")
+	@JsonIgnoreProperties("eventos")
 	private Pessoa pessoa;
 	
 	@OneToMany(mappedBy = "evento")

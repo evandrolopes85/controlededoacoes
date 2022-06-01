@@ -14,20 +14,24 @@ public class EventoDTO {
 	private String urlFoto;
 	private boolean ativo;
 	private String descricao;
-	private Integer itens;
+	//private Integer itens;
+	private Integer idPessoa;
+	private String nomePessoa;
 	
 	public EventoDTO(Integer id, String nome, LocalDate dataInicio, LocalDate dataFim, LocalDate dataCriacao,
-			String urlFoto, boolean ativo, String descricao, Integer itens) {
+			String urlFoto, boolean ativo, String descricao, Integer idPessoa, String nomePessoa) {
 		super();
-		this.id = id;
-		this.nome = nome;
-		this.dataInicio = dataInicio;
-		this.dataFim = dataFim;
+		this.id          = id;
+		this.nome        = nome;
+		this.dataInicio  = dataInicio;
+		this.dataFim     = dataFim;
 		this.dataCriacao = dataCriacao;
-		this.urlFoto = urlFoto;
-		this.ativo = ativo;
-		this.descricao = descricao;
-		this.itens = itens;
+		this.urlFoto     = urlFoto;
+		this.ativo       = ativo;
+		this.descricao   = descricao;
+//		this.itens       = itens;
+		this.idPessoa    = idPessoa;
+		this.nomePessoa  = nomePessoa;
 	}
 	
 	public Integer getId() {
@@ -78,10 +82,26 @@ public class EventoDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Integer getItens() {
-		return itens;
+//	public Integer getItens() {
+//		return itens;
+//	}
+//	public void setItens(Integer itens) {
+//		this.itens = itens;
+//	}
+
+	public Integer getIdPessoa() {
+		return idPessoa;
 	}
-	public void setItens(Integer itens) {
-		this.itens = itens;
+
+	public void setIdPessoa(Integer idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
+	public String getNomePessoa() {
+		return nomePessoa;
+	}
+
+	public void setNomePessoa(String nomePessoa) {
+		this.nomePessoa = nomePessoa;
 	}
 }

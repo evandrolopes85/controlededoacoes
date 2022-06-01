@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.github.evandrolopes85.doacoes.dao.EventoDAO;
+import io.github.evandrolopes85.doacoes.dto.EventoDTO;
 import io.github.evandrolopes85.doacoes.model.Evento;
 
 @Service
@@ -63,6 +64,15 @@ public class EventoServiceimpl implements IEventoService{
 			
 			return e;
 		}
+		return null;
+	}
+
+	@Override
+	public EventoDTO recuperarEventoDTOPorID(Integer id) {
+		if(id == null) return null;
+		EventoDTO evento = (EventoDTO)dao.recuperarEventoDTOPorID(id);
+		if(evento != null)
+			return evento;
 		return null;
 	}
 

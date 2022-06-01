@@ -33,8 +33,8 @@ public class EventoController {
 	}
 	
 	@GetMapping("/evento/{id}")
-	public ResponseEntity<Evento> recuperarEventoPorID(@PathVariable int id){
-		Evento evento = service.recuperaEventoPorID(id);
+	public ResponseEntity<EventoDTO> recuperarEventoPorID(@PathVariable int id){
+		EventoDTO evento = service.recuperarEventoDTOPorID(id); //service.recuperaEventoPorID(id);
 		
 		if(evento != null) {
 			return ResponseEntity.ok(evento);
