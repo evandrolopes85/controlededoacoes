@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,9 +21,11 @@ public class ItensDoEvento {
 	@Column(name = "id_evento_item")
 	private Integer idItensDoEvento;
 	
+	@NotNull
 	@Column(name = "produto", length = 100)
 	private String produto;
 	
+	@NotNull
 	@Column(name = "qtd_necessaria")
 	private Integer qtdNecessaria;
 	

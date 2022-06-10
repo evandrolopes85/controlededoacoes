@@ -50,27 +50,36 @@ public class Pessoa {
 	@Column(name = "senha", length = 16, nullable = false)
 	private String senha;
 
+	@NotNull
 	@Column(name = "administrador", nullable = false)
 	private boolean administrador;
 
+	@Size(max = 9)
 	@Column(name = "cep", length = 9, nullable = false)
 	private String cep;
 
+	@NotNull
+	@Size(max = 9)
 	@Column(name = "logradouro", length = 9, nullable = false)
 	private String logradouro;
 
+	@NotNull
 	@Column(name = "numero", length = 8, nullable = false)
 	private String numero;
 
+	@NotNull
 	@Column(name = "complemento", length = 16, nullable = false)
 	private String complemento;
 
+	@NotNull
 	@Column(name = "bairro", length = 32, nullable = false)
 	private String bairro;
 
+	@NotNull
 	@Column(name = "cidade", length = 32, nullable = false)
 	private String cidade;
 
+	@NotNull
 	@Column(name = "uf", length = 2, nullable = false)
 	private String uf;
 

@@ -42,7 +42,7 @@ public class ItensDoEventoController {
 		ItensDoEvento updateItens;
 		
 		if(itensDoEvento != null && itensDoEvento.getIdItensDoEvento() != null) {
-			updateItens = service.recuperaEventoPorId(itensDoEvento.getIdItensDoEvento());
+			updateItens = service.recuperarItensDoEventoPorId(itensDoEvento.getIdItensDoEvento());
 			
 			updateItens.setProduto(itensDoEvento.getProduto());
 			updateItens.setQtdNecessaria(itensDoEvento.getQtdNecessaria());
@@ -53,5 +53,15 @@ public class ItensDoEventoController {
 		}
 		
 		return ResponseEntity.badRequest().build();
+	}
+	
+	@PutMapping("/itens/doacao")
+	public ResponseEntity<ItensDoEvento> doacao(@RequestBody ItensDoEvento item){
+		
+		ItensDoEvento upgrade = service.doacao(item);
+		if(upgrade != null)
+			return ResponseEntity.ok(upgrade);
+		
+		return ResponseEntity.notFound().build();
 	}
 }

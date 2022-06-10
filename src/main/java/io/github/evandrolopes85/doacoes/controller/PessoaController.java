@@ -45,7 +45,7 @@ public class PessoaController {
 		return ResponseEntity.notFound().build();
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/pessoa/login")
 	public ResponseEntity<PessoaDTO> login(@RequestBody Pessoa pessoa) {
 		if (pessoa != null) {
 			PessoaDTO login = service.login(pessoa);

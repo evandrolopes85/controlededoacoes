@@ -39,11 +39,24 @@ public class ItensDoEventoImpl implements IItensDoEventoService{
 	}
 
 	@Override
-	public ItensDoEvento recuperaEventoPorId(Integer id) {
+	public ItensDoEvento recuperarItensDoEventoPorId(Integer id) {
 		// TODO Auto-generated method stub
 		if(id != null) {
 			return dao.findByIdItensDoEvento(id);
 		}
 		return null;
+	}
+
+	@Override
+	public ItensDoEvento doacao(ItensDoEvento item) {
+		// TODO Auto-generated method stub
+		ItensDoEvento upgrade = dao.findByIdItensDoEvento(item.getIdItensDoEvento());
+		upgrade.setIdItensDoEvento(item.getIdItensDoEvento());
+		upgrade.setProduto(item.getProduto());
+		upgrade.setQtdNecessaria(upgrade.getQtdNecessaria());
+		upgrade.setQtdObtida(upgrade.getQtdObtida() + item.getQtdObtida());
+		upgrade.setEvento(upgrade.getEvento());
+		
+		return dao.save(upgrade);
 	}
 }
