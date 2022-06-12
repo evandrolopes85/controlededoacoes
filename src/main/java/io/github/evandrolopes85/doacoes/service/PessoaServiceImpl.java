@@ -2,14 +2,18 @@ package io.github.evandrolopes85.doacoes.service;
 
 import java.util.ArrayList;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import io.github.evandrolopes85.doacoes.dao.PessoaDAO;
 import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 @Service
+@Validated
 public class PessoaServiceImpl implements IPessoaService{
 
 	@Autowired
@@ -39,7 +43,7 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public Pessoa adicionarPessoa(Pessoa p) {
+	public Pessoa adicionarPessoa(@Valid Pessoa p) {
 		// TODO Auto-generated method stub
 		Pessoa novaPessoa = p;
 		
