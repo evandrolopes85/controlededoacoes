@@ -32,6 +32,10 @@ public class Contem {
 	@JoinColumn(name = "id_tem")
 	private Item item;
 
+	@ManyToOne
+	@JoinColumn(name = "id_evento")
+	private Evento evento;
+	
 	public void setIdContem(Integer idContem) {
 		this.idContem = idContem;
 	}
@@ -59,4 +63,14 @@ public class Contem {
 	public void setItem(Item item) {
 		this.item = item;
 	}
+
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	
+	
 }
