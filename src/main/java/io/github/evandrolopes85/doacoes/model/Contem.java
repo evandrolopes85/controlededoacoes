@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +27,10 @@ public class Contem {
 	public Integer getIdContem() {
 		return idContem;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name = "id_tem")
+	private Item item;
 
 	public void setIdContem(Integer idContem) {
 		this.idContem = idContem;
@@ -44,5 +50,13 @@ public class Contem {
 
 	public void setQtdObtida(int qtdObtida) {
 		this.qtdObtida = qtdObtida;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
 	}
 }
