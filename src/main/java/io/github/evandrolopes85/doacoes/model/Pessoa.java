@@ -24,7 +24,7 @@ public class Pessoa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@Column(name = "id_pessoa", nullable = false)
 	private Integer idPessoa;
 
 	@NotNull
@@ -34,8 +34,8 @@ public class Pessoa {
 	private String nome;
 
 	@Email
-	@Size(max = 32)
-	@Column(name = "email", length = 32, nullable = false)
+	@Size(max = 100)
+	@Column(name = "email", length = 100, nullable = false)
 	private String email;
 
 	@NotNull
@@ -52,15 +52,15 @@ public class Pessoa {
 
 	@NotNull
 	@Column(name = "administrador", nullable = false)
-	private boolean administrador;
+	private int administrador;
 
 	@Size(max = 9)
 	@Column(name = "cep", length = 9, nullable = false)
 	private String cep;
 
 	@NotNull
-	@Size(max = 9)
-	@Column(name = "logradouro", length = 9, nullable = false)
+	@Size(max = 64)
+	@Column(name = "logradouro", length = 64, nullable = false)
 	private String logradouro;
 
 	@NotNull
@@ -131,11 +131,11 @@ public class Pessoa {
 		this.senha = senha;
 	}
 
-	public boolean isAdministrador() {
+	public int getAdministrador() {
 		return administrador;
 	}
 
-	public void setAdministrador(boolean administrador) {
+	public void setAdministrador(int administrador) {
 		this.administrador = administrador;
 	}
 

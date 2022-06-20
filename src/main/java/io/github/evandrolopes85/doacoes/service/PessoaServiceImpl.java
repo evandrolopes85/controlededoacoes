@@ -13,7 +13,6 @@ import io.github.evandrolopes85.doacoes.dto.PessoaDTO;
 import io.github.evandrolopes85.doacoes.model.Pessoa;
 
 @Service
-@Validated
 public class PessoaServiceImpl implements IPessoaService{
 
 	@Autowired
@@ -43,7 +42,7 @@ public class PessoaServiceImpl implements IPessoaService{
 	}
 
 	@Override
-	public Pessoa adicionarPessoa(@Valid Pessoa p) {
+	public Pessoa adicionarPessoa(Pessoa p) {
 		// TODO Auto-generated method stub
 		Pessoa novaPessoa = p;
 		
@@ -68,7 +67,7 @@ public class PessoaServiceImpl implements IPessoaService{
 			pessoaParaAtualizar.setEmail(p.getEmail());
 			pessoaParaAtualizar.setTelefone(p.getTelefone());
 			pessoaParaAtualizar.setSenha(p.getSenha());
-			pessoaParaAtualizar.setAdministrador(p.isAdministrador());
+			pessoaParaAtualizar.setAdministrador(p.getAdministrador());
 			pessoaParaAtualizar.setCep(p.getCep());
 			pessoaParaAtualizar.setLogradouro(p.getLogradouro());
 			pessoaParaAtualizar.setNumero(p.getNumero());

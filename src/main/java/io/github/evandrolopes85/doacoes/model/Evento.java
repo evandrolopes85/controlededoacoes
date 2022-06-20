@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@Column(name = "id_evento", nullable = false)
 	private Integer idEvento;
 
 	@Column(name = "nome", length = 64, nullable = false)
@@ -46,7 +46,7 @@ public class Evento {
 	private String descricao;
 
 	@ManyToOne
-	@JoinColumn(name = "id_nome")
+	@JoinColumn(name = "id_pessoa")
 	@JsonIgnoreProperties("eventos")
 	private Pessoa pessoa;
 	
