@@ -50,9 +50,9 @@ public class Evento {
 	@JsonIgnoreProperties("eventos")
 	private Pessoa pessoa;
 	
-	@OneToMany(mappedBy = "evento")
-	@JsonIgnoreProperties("evento")
-	private List<ItensDoEvento> itensDoEvento;
+//	@OneToMany(mappedBy = "evento")
+//	@JsonIgnoreProperties("evento")
+//	private List<ItensDoEvento> itensDoEvento;
 
 	public Integer getIdEvento() {
 		return idEvento;
@@ -126,13 +126,13 @@ public class Evento {
 		this.pessoa = pessoa;
 	}
 
-	public List<ItensDoEvento> getItensDoEvento() {
-		return itensDoEvento;
-	}
-
-	public void setItensDoEvento(List<ItensDoEvento> itensDoEvento) {
-		this.itensDoEvento = itensDoEvento;
-	}
-	
+//	public List<ItensDoEvento> getItensDoEvento() {
+//		return itensDoEvento;
+//	}
+//
+//	public void setItensDoEvento(List<ItensDoEvento> itensDoEvento) {
+//		this.itensDoEvento = itensDoEvento;
+//	}
+//	
 	
 }

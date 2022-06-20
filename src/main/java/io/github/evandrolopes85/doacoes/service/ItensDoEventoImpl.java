@@ -53,9 +53,9 @@ public class ItensDoEventoImpl implements IItensDoEventoService{
 		ItensDoEvento upgrade = dao.findByIdItensDoEvento(item.getIdItensDoEvento());
 		upgrade.setIdItensDoEvento(item.getIdItensDoEvento());
 		upgrade.setProduto(item.getProduto());
-		upgrade.setQtdNecessaria(upgrade.getQtdNecessaria());
-		upgrade.setQtdObtida(upgrade.getQtdObtida() + item.getQtdObtida());
-		upgrade.setEvento(upgrade.getEvento());
+//		upgrade.setQtdNecessaria(upgrade.getQtdNecessaria());
+//		upgrade.setQtdObtida(upgrade.getQtdObtida() + item.getQtdObtida());
+//		upgrade.setEvento(upgrade.getEvento());
 		
 		return dao.save(upgrade);
 	}
