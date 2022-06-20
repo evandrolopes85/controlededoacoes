@@ -3,7 +3,7 @@ package io.github.evandrolopes85.doacoes.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-import io.github.evandrolopes85.doacoes.model.ItensDoEvento;
+import io.github.evandrolopes85.doacoes.model.Item;
 
 public class EventoDTO {
 	private Integer id;

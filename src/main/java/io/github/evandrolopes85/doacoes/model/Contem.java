@@ -22,4 +22,27 @@ public class Contem {
 	@Column(name = "qtd_obtida", nullable = false)
 	private int qtdObtida;
 
+	public Integer getIdContem() {
+		return idContem;
+	}
+
+	public void setIdContem(Integer idContem) {
+		this.idContem = idContem;
+	}
+
+	public int getQtdNecessaria() {
+		return qtdNecessaria;
+	}
+
+	public void setQtdNecessaria(int qtdNecessaria) {
+		this.qtdNecessaria = qtdNecessaria;
+	}
+
+	public int getQtdObtida() {
+		return qtdObtida;
+	}
+
+	public void setQtdObtida(int qtdObtida) {
+		this.qtdObtida = qtdObtida;
+	}
 }

@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.evandrolopes85.doacoes.model.ItensDoEvento;
-import io.github.evandrolopes85.doacoes.service.IItensDoEventoService;
+import io.github.evandrolopes85.doacoes.model.Item;
+import io.github.evandrolopes85.doacoes.service.IItemService;
 
 @RestController
-public class ItensDoEventoController {
+public class ItemController {
 
 	@Autowired
-	private IItensDoEventoService service;
+	private IItemService service;
 	
 	@GetMapping("/itens")
-	public ResponseEntity<ArrayList<ItensDoEvento>> recuperarTodosItensDoEvento(){
-		ArrayList<ItensDoEvento> itens = service.recuperarTodosItensDoEvento();
+	public ResponseEntity<ArrayList<Item>> recuperarTodosItensDoEvento(){
+		ArrayList<Item> itens = service.recuperarTodosItensDoEvento();
 		if(itens != null)
 			return ResponseEntity.ok(itens);
 		
@@ -29,25 +29,22 @@ public class ItensDoEventoController {
 	}
 	
 	@PostMapping("/itens")
-	public ResponseEntity<ItensDoEvento> adicionaItensDoEvento(@RequestBody ItensDoEvento itensDoEvento){
+	public ResponseEntity<Item> adicionaItensDoEvento(@RequestBody Item itensDoEvento){
 		if(itensDoEvento != null) {
-			ItensDoEvento itens = service.adicionaItensDoEvento(itensDoEvento);
+			Item itens = service.adicionaItensDoEvento(itensDoEvento);
 			return ResponseEntity.status(201).body(itens);
 		}
 		return ResponseEntity.notFound().build();
 	}
 	
 	@PutMapping("/itens")
-	public ResponseEntity<ItensDoEvento> atualizarItensDoEvento(@RequestBody ItensDoEvento itensDoEvento){
-		ItensDoEvento updateItens;
+	public ResponseEntity<Item> atualizarItensDoEvento(@RequestBody Item itensDoEvento){
+		Item updateItens;
 		
-		if(itensDoEvento != null && itensDoEvento.getIdItensDoEvento() != null) {
-			updateItens = service.recuperarItensDoEventoPorId(itensDoEvento.getIdItensDoEvento());
+		if(itensDoEvento != null && itensDoEvento.getIdItem() != null) {
+			updateItens = service.recuperarItensDoEventoPorId(itensDoEvento.getIdItem());
 			
 			updateItens.setProduto(itensDoEvento.getProduto());
-//			updateItens.setQtdNecessaria(itensDoEvento.getQtdNecessaria());
-//			updateItens.setQtdObtida(itensDoEvento.getQtdObtida());
-//			updateItens.setEvento(itensDoEvento.getEvento());
 			
 			return ResponseEntity.ok(service.atualizarItensDoEvento(updateItens) );
 		}
@@ -56,9 +53,9 @@ public class ItensDoEventoController {
 	}
 	
 	@PutMapping("/itens/doacao")
-	public ResponseEntity<ItensDoEvento> doacao(@RequestBody ItensDoEvento item){
+	public ResponseEntity<Item> doacao(@RequestBody Item item){
 		
-		ItensDoEvento upgrade = service.doacao(item);
+		Item upgrade = service.doacao(item);
 		if(upgrade != null)
 			return ResponseEntity.ok(upgrade);
 		
