@@ -1,0 +1,1 @@
+insert into tbl_pessoa(null, "Evandro", "evandrcwd@gmail.com", "11912345678","1234",1, "08000000", "rua de casa", "0", "A", "bairro", "cidade", "uf");
