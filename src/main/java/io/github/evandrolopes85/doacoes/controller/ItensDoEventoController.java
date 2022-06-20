@@ -45,8 +45,8 @@ public class ItensDoEventoController {
 			updateItens = service.recuperarItensDoEventoPorId(itensDoEvento.getIdItensDoEvento());
 			
 			updateItens.setProduto(itensDoEvento.getProduto());
-			updateItens.setQtdNecessaria(itensDoEvento.getQtdNecessaria());
-			updateItens.setQtdObtida(itensDoEvento.getQtdObtida());
+//			updateItens.setQtdNecessaria(itensDoEvento.getQtdNecessaria());
+//			updateItens.setQtdObtida(itensDoEvento.getQtdObtida());
 //			updateItens.setEvento(itensDoEvento.getEvento());
 			
 			return ResponseEntity.ok(service.atualizarItensDoEvento(updateItens) );

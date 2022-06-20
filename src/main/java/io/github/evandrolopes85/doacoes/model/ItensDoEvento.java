@@ -5,15 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
-@Table(name = "tbl_evento_item")
+@Table(name = "tbl_item")
 public class ItensDoEvento {
 	
 	@Id
@@ -25,17 +21,17 @@ public class ItensDoEvento {
 	@Column(name = "produto", length = 100)
 	private String produto;
 	
-	@NotNull
-	@Column(name = "qtd_necessaria")
-	private Integer qtdNecessaria;
+//	@NotNull
+//	@Column(name = "qtd_necessaria")
+//	private Integer qtdNecessaria;
+//	
+//	@Column(name = "qtd_obtida")
+//	private Integer qtdObtida;
 	
-	@Column(name = "qtd_obtida")
-	private Integer qtdObtida;
-	
-	@ManyToOne()
-	@JsonIgnoreProperties("itensDoEvento")
-	@JoinColumn(name = "id_evento")
-	private Evento evento;
+//	@ManyToOne()
+//	@JsonIgnoreProperties("itensDoEvento")
+//	@JoinColumn(name = "id_evento")
+//	private Evento evento;
 
 	public Integer getIdItensDoEvento() {
 		return idItensDoEvento;
@@ -53,27 +49,27 @@ public class ItensDoEvento {
 		this.produto = produto;
 	}
 
-	public Integer getQtdNecessaria() {
-		return qtdNecessaria;
-	}
+//	public Integer getQtdNecessaria() {
+//		return qtdNecessaria;
+//	}
+//
+//	public void setQtdNecessaria(Integer qtdNecessaria) {
+//		this.qtdNecessaria = qtdNecessaria;
+//	}
+//
+//	public Integer getQtdObtida() {
+//		return qtdObtida;
+//	}
+//
+//	public void setQtdObtida(Integer qtdObtida) {
+//		this.qtdObtida = qtdObtida;
+//	}
 
-	public void setQtdNecessaria(Integer qtdNecessaria) {
-		this.qtdNecessaria = qtdNecessaria;
-	}
-
-	public Integer getQtdObtida() {
-		return qtdObtida;
-	}
-
-	public void setQtdObtida(Integer qtdObtida) {
-		this.qtdObtida = qtdObtida;
-	}
-
-	public Evento getEvento() {
-		return evento;
-	}
-
-	public void setEvento(Evento evento) {
-		this.evento = evento;
-	}
+//	public Evento getEvento() {
+//		return evento;
+//	}
+//
+//	public void setEvento(Evento evento) {
+//		this.evento = evento;
+//	}
 }
