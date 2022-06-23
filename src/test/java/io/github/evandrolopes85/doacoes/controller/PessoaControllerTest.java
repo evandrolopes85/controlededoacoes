@@ -1,28 +1,24 @@
 package io.github.evandrolopes85.doacoes.controller;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import io.github.evandrolopes85.doacoes.DoacoesApplicationTests;
-
-//@AutoConfigureMockMvc
-public class PessoaControllerTest extends DoacoesApplicationTests{
+@SpringBootTest
+@AutoConfigureMockMvc
+public class PessoaControllerTest{ // extends DoacoesApplicationTests{
 	
+	@Autowired
 	private MockMvc mockMvc;
 
 	@Autowired
 	private PessoaController pessoaController;
 	
-	@BeforeEach
-	public void setUp() {
-		this.mockMvc = MockMvcBuilders.standaloneSetup(pessoaController).build();
-	}
 	
 	@Test
 	public void recuperarTodasPessoas_RetornarStatusCode200() throws Exception{
